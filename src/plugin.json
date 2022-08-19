@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "flag-datasource",
+  "id": "launchdarkly-flag-datasource",
+  "metrics": true,
+  "info": {
+    "description": "Uses the LaunchDarkly API as a Grafana datasource",
+    "author": {
+      "name": "Phil Zona",
+      "url": "https://github.com/launchdarkly"
+    },
+    "keywords": [],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/grafana-starter-datasource"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/grafana-starter-datasource/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  },
+  "routes": [
+    {
+      "path": "flags",
+      "url": "https://app.launchdarkly.com/api/v2/flags/phil-z-test-project",
+      "headers": [
+        {
+          "name": "Authorization",
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
